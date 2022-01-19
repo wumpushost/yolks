@@ -2,7 +2,7 @@
 # Mono Latest Image
 # Minimum Panel Version: 1.2.x
 # ----------------------------------
-FROM        ghcr.io/parkervcp/yolks:debian
+FROM        ghcr.io/j122j/yolks:debian
 
 LABEL       author="Torsten Widmann" maintainer="support@goover.de"
 

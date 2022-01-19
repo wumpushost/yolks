@@ -36,4 +36,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-             ghcr.io/parkervcp/games:${{ matrix.game }}
+             ghcr.io/j122j/games:${{ matrix.game }}
