@@ -1,5 +1,6 @@
-name: build oses
+name: build mariadb
 on:
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * 1"
@@ -7,18 +8,20 @@ on:
     branches:
       - master
     paths:
-      - oses/**
+      - mariadb/**
 jobs:
   push:
-    name: "yolks:${{ matrix.oses }}"
+    name: "yolks:mariadb_${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        oses:
-          - alpine
-          - debian
-          - ubuntu
+        tag:
+          - '10.3'
+          - '10.4'
+          - '10.5'
+          - '10.6'
+          - '10.7'
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-qemu-action@v1
@@ -33,9 +36,9 @@ jobs:
           password: ${{ secrets.REGISTRY_TOKEN }}
       - uses: docker/build-push-action@v2
         with:
-          context: ./oses/${{ matrix.oses }}
-          file: ./oses/${{ matrix.oses }}/Dockerfile
+          context: ./mariadb
+          file: ./mariadb/${{ matrix.tag }}/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/j122j/yolks:${{ matrix.oses }}
+            ghcr.io/parkervcp/yolks:mariadb_${{ matrix.tag }}

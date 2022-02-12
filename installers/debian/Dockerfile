@@ -18,9 +18,9 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-# 
+#
 
-FROM        --platform=$BUILDPLATFORM debian:stable-slim
+FROM        --platform=$TARGETOS/$TARGETARCH debian:stable-slim
 
 LABEL       author="Matthew Penner" maintainer="matthew@pterodactyl.io"
 
@@ -30,6 +30,6 @@ LABEL       org.opencontainers.image.licenses=MIT
 ENV         DEBIAN_FRONTEND=noninteractive
 
 RUN         dpkg --add-architecture i386 \
-				&& apt update \
-				&& apt upgrade -y \
-				&& apt -y --no-install-recommends install ca-certificates curl lib32gcc-s1 libsdl2-2.0-0:i386 git unzip zip tar jq
+	&& apt update \
+	&& apt upgrade -y \
+	&& apt -y --no-install-recommends install ca-certificates curl lib32gcc-s1 libsdl2-2.0-0:i386 git unzip zip tar jq
