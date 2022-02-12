@@ -29,7 +29,8 @@ LABEL       org.opencontainers.image.licenses=MIT
 
 ENV         DEBIAN_FRONTEND=noninteractive
 
-RUN         apt update \
+RUN         dpkg --configure -a \
+	apt update \
 	&& apt upgrade -y \
 	&& apt -y --no-install-recommends install ca-certificates curl libsdl2-2.0-0 git unzip zip tar jq gcc g++ dnsutils iproute2 ffmpeg procps pkg-config sqlite3 libsqlite3-dev python3 python3-dev python3-pip tzdata build-essential libtool libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
 

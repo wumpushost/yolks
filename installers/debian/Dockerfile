@@ -29,6 +29,7 @@ LABEL       org.opencontainers.image.licenses=MIT
 
 ENV         DEBIAN_FRONTEND=noninteractive
 
-RUN         apt update \
+RUN         dpkg --configure -a \
+	&& apt update \
 	&& apt upgrade -y \
 	&& apt -y --no-install-recommends install ca-certificates curl libsdl2-2.0-0 git unzip zip tar jq
