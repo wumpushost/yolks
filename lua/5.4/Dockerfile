@@ -31,7 +31,14 @@ RUN         cd /opt \
             && make test \
             && make install
 
-RUN         cd /usr/local/bin && curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh
+RUN         cd /opt \
+            && git clone --recursive https://github.com/luvit/lit.git lit \
+            && cd lit \
+            && luvi . -- make . /usr/local/bin/luvi \
+            && ./lit make github://luvit/luvit ./luvit /usr/local/bin/luvi \
+            && mv lit /usr/local/bin \
+            && mv luvit /usr/local/bin
+
 
 USER        container
 ENV         USER=container HOME=/home/container
