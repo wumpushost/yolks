@@ -34,10 +34,8 @@ RUN         cd /opt \
 RUN         cd /opt \
             && git clone --recursive https://github.com/luvit/lit.git lit \
             && cd lit \
-            && luvi . -- make . /usr/local/bin/luvi \
-            && ./lit make github://luvit/luvit ./luvit /usr/local/bin/luvi \
-            && mv lit /usr/local/bin \
-            && mv luvit /usr/local/bin
+            && luvi . -- make . /usr/local/bin/lit /usr/local/bin/luvi \
+            && lit make github://luvit/luvit /usr/local/bin/luvit /usr/local/bin/luvi
 
 
 USER        container
