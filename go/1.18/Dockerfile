@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH golang:1.16
+FROM        --platform=$TARGETOS/$TARGETARCH golang:1.18
 
 LABEL       author="Jovan Jovanovic" maintainer="jovan@jovanovic.live"
 

@@ -82,12 +82,10 @@ is tagged correctly.
 
 ### [Golang](/go)
 
--   [`go1.14`](/go/1.14)
-    -   `ghcr.io/j122j/yolks:go_1.14`
--   [`go1.15`](/go/1.15)
-    -   `ghcr.io/j122j/yolks:go_1.15`
 -   [`go1.16`](/go/1.16)
     -   `ghcr.io/j122j/yolks:go_1.16`
+-   [`go1.18`](/go/1.18)
+    -   `ghcr.io/j122j/yolks:go_1.18`
 
 ### [Java](/java)
 
@@ -191,3 +189,5 @@ is tagged correctly.
     -   `ghcr.io/j122j/installers:alpine`
 -   [`debian-install`](/installers/debian)
     -   `ghcr.io/j122j/installers:debian`
+-   [`debian-install-full`](/installers/debian_full)
+    -   `ghcr.io/j122j/installers:debian_full`
