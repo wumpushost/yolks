@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 FROM        --platform=$BUILDPLATFORM ghcr.io/j122j/yolks:debian
-=======
-FROM        --platform=$TARGETOS/$TARGETARCH ghcr.io/parkervcp/yolks:debian
->>>>>>> 68547991a3759cc12dc3dd259d68ac436879bf65
 
 LABEL       author="Torsten Widmann" maintainer="info@goover.de"
 
