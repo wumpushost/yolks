@@ -2,8 +2,8 @@
 
 ## File: Pterodactyl Arma 3 Image - entrypoint.sh
 ## Author: David Wolfe (Red-Thirten)
-## Contributors: Aussie Server Hosts (https://aussieserverhosts.com/)
-## Date: 2021/07/13
+## Contributors: Aussie Server Hosts (https://aussieserverhosts.com/), Stephen White (SilK)
+## Date: 2022/05/22
 ## License: MIT License
 
 ## === CONSTANTS ===
@@ -28,7 +28,7 @@ NC='\033[0m' # No Color
 ## === DEFINE FUNCTIONS ===
 #
 # Runs SteamCMD with specified variables and performs error handling.
-function RunSteamCMD { #[Input: int server=0 mod=1 optional_mod=2; int id]
+function RunSteamCMD() { #[Input: int server=0 mod=1 optional_mod=2; int id]
 	# Clear previous SteamCMD log
 	if [[ -f "${STEAMCMD_LOG}" ]]; then
 		rm -f "${STEAMCMD_LOG:?}"
@@ -146,7 +146,7 @@ function RunSteamCMD { #[Input: int server=0 mod=1 optional_mod=2; int id]
 }
 
 # Takes a directory (string) as input, and recursively makes all files & folders lowercase.
-function ModsLowercase {
+function ModsLowercase() {
 	echo -e "\n\tMaking mod ${CYAN}$1${NC} files/folders lowercase..."
 	for SRC in $(find ./$1 -depth); do
 		DST=$(dirname "${SRC}")/$(basename "${SRC}" | tr '[A-Z]' '[a-z]')
@@ -157,20 +157,23 @@ function ModsLowercase {
 }
 
 # Removes duplicate items from a semicolon delimited string
-function RemoveDuplicates { #[Input: str - Output: printf of new str]
-	if [[ -n $1 ]]; then       # If nothing to compare, skip to prevent extra semicolon being returned
+function RemoveDuplicates() { #[Input: str - Output: printf of new str]
+	if [[ -n $1 ]]; then         # If nothing to compare, skip to prevent extra semicolon being returned
 		echo $1 | sed -e 's/;/\n/g' | sort -u | xargs printf '%s;'
 	fi
 }
 
 # === ENTRYPOINT START ===
 
+# Wait for the container to fully initialize
+sleep 1
+
 # Set environment variable that holds the Internal Docker IP
 INTERNAL_IP=$(ip route get 1 | awk '{print $(NF-2);exit}')
 export INTERNAL_IP
 
-cd /home/container
-sleep 1
+# Switch to the container's working directory
+cd /home/container || exit 1
 
 # Check for old eggs
 if [[ -z ${VALIDATE_SERVER} ]]; then # VALIDATE_SERVER was not in the previous version
@@ -345,15 +348,15 @@ if [[ ! -f ./basic.cfg ]]; then
 	curl -sSL ${BASIC_URL} -o ./basic.cfg
 fi
 
-# $NSS_WRAPPER_PASSWD and $NSS_WRAPPER_GROUP have been set by the Dockerfile
+# Setup NSS Wrapper for use ($NSS_WRAPPER_PASSWD and $NSS_WRAPPER_GROUP have been set by the Dockerfile)
 export USER_ID=$(id -u)
 export GROUP_ID=$(id -g)
 envsubst </passwd.template >${NSS_WRAPPER_PASSWD}
 
-if [[ ${SERVER_BINARY} == *"x64"* ]]; then # Check which libnss_wrapper architecture to run, based off the server binary name
-	export LD_PRELOAD=/libnss_wrapper_x64.so
+if [[ ${SERVER_BINARY} == *"x64"* ]]; then # Check which libnss-wrapper architecture to run, based off the server binary name
+	export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libnss_wrapper.so
 else
-	export LD_PRELOAD=/libnss_wrapper.so
+	export LD_PRELOAD=/usr/lib/i386-linux-gnu/libnss_wrapper.so
 fi
 
 # Replace Startup Variables

@@ -1,4 +1,4 @@
-FROM        --platform=$BUILDPLATFORM erlang:22-alpine
+FROM        --platform=$TARGETOS/$TARGETARCH erlang:22-alpine
 
 LABEL       author="Pascal Zarrad" maintainer="p.zarrad@outlook.de"
 

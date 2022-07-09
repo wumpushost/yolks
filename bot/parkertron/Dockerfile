@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM --platform=$TARGETOS/$TARGETARCH alpine:3.9
 
 LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
 

@@ -75,12 +75,16 @@ is tagged correctly.
 
 ### [Games](/games)
 
-* [`altv`](/games/altv)
-  * `ghcr.io/j122j/games:altv`
-* [`arma3`](/games/arma3)
-  * `ghcr.io/j122j/games:arma3`
-* [`source`](/games/source)
-  * `ghcr.io/j122j/games:source`
+-   [`altv`](/games/altv)
+    -   `ghcr.io/j122j/games:altv`
+-   [`arma3`](/games/arma3)
+    -   `ghcr.io/j122j/games:arma3`
+-   [`dayz`](/games/dayz)
+    -   `ghcr.io/j122j/games:dayz`
+-   [`samp`](/games/samp)
+    -   `ghcr.io/j122j/games:samp`
+-   [`source`](/games/source)
+    -   `ghcr.io/j122j/games:source`
 
 ### [Golang](/go)
 
@@ -134,26 +138,25 @@ is tagged correctly.
 ### [Nodejs](/nodejs)
 
 <<<<<<< HEAD
+
 -   [`node12`](/nodejs/12)
     -   `ghcr.io/j122j/yolks:nodejs_12`
 -   [`node14`](/nodejs/14)
     -   `ghcr.io/j122j/yolks:nodejs_14`
 -   [`node16`](/nodejs/16)
     -   `ghcr.io/j122j/yolks:nodejs_16`
--   [`node17`](/nodejs/17)
+-   # [`node17`](/nodejs/17) - `ghcr.io/j122j/yolks:nodejs_17`
+
+*   [`node12`](/nodejs/12)
+    -   `ghcr.io/j122j/yolks:nodejs_12`
+*   [`node14`](/nodejs/14)
+    -   `ghcr.io/j122j/yolks:nodejs_14`
+*   [`node16`](/nodejs/16)
+    -   `ghcr.io/j122j/yolks:nodejs_16`
+*   [`node17`](/nodejs/17)
     -   `ghcr.io/j122j/yolks:nodejs_17`
-=======
-* [`node12`](/nodejs/12)
-  * `ghcr.io/j122j/yolks:nodejs_12`
-* [`node14`](/nodejs/14)
-  * `ghcr.io/j122j/yolks:nodejs_14`
-* [`node16`](/nodejs/16)
-  * `ghcr.io/j122j/yolks:nodejs_16`
-* [`node17`](/nodejs/17)
-  * `ghcr.io/j122j/yolks:nodejs_17`
-* [`node18`](/nodejs/18)
-  * `ghcr.io/j122j/yolks:nodejs_18`
->>>>>>> cd6b94986888030898f126fc1ce1ff977c80a82b
+*   [`node18`](/nodejs/18)
+    -   `ghcr.io/j122j/yolks:nodejs_18`
 
 ### [PostgreSQL](/postgres)
 
@@ -190,14 +193,14 @@ is tagged correctly.
 
 ### [Rust](/rust)
 
-* ['rust1.31'](/rust/1.31)
-  * `ghcr.io/j122j/yolks:rust_1.31`
-* ['rust1.56'](/rust/1.56)
-  * `ghcr.io/j122j/yolks:rust_1.56`
-* ['rust1.60'](/rust/1.60)
-  * `ghcr.io/j122j/yolks:rust_1.60`
-* ['rust latest'](/rust/latest)
-  * `ghcr.io/j122j/yolks:rust_latest`
+-   ['rust1.31'](/rust/1.31)
+    -   `ghcr.io/j122j/yolks:rust_1.31`
+-   ['rust1.56'](/rust/1.56)
+    -   `ghcr.io/j122j/yolks:rust_1.56`
+-   ['rust1.60'](/rust/1.60)
+    -   `ghcr.io/j122j/yolks:rust_1.60`
+-   ['rust latest'](/rust/latest)
+    -   `ghcr.io/j122j/yolks:rust_latest`
 
 ### [Voice](/voice)
 

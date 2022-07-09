@@ -1,7 +1,7 @@
-FROM        node:14-buster
+FROM        --platform=$TARGETOS/$TARGETARCH node:14-buster
 
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
-    ## install mongo
+## install mongo
 RUN wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add - \
  && echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.2 main" | tee /etc/apt/sources.list.d/mongodb-org-4.2.list \
  && apt update \

@@ -1,4 +1,4 @@
-FROM        --platform=$BUILDPLATFORM adoptopenjdk/openjdk11:alpine-jre
+FROM        --platform=$TARGETOS/$TARGETARCH adoptopenjdk/openjdk11:alpine-jre
 
 LABEL       author="Pascal Zarrad" maintainer="p.zarrad@outlook.de"
 
