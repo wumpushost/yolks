@@ -1,7 +1,7 @@
 # ----------------------------------
 # Generic Wine 6 image
 # ----------------------------------
-FROM    ghcr.io/j122j/yolks:debian
+FROM    docker.lightbulb.host/yolks:debian
 
 LABEL   author="Michael Parker" maintainer="parker@pterodactyl.io"
 

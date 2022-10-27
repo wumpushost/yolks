@@ -16,10 +16,10 @@ jobs:
       fail-fast: false
       matrix:
         tag:
-          - '1.31'
-          - '1.56'
-          - '1.60'
-          - 'latest'
+          - "1.31"
+          - "1.56"
+          - "1.60"
+          - "latest"
     steps:
       - uses: actions/checkout@v2
       # Setup QEMU for ARM64 Build
@@ -30,9 +30,9 @@ jobs:
           buildkitd-flags: --debug
       - uses: docker/login-action@v1
         with:
-          registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.REGISTRY_TOKEN }}
+          registry: docker.lightbulb.host
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
       - uses: docker/build-push-action@v2
         with:
           context: ./rust
@@ -40,4 +40,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/j122j/yolks:rust_${{ matrix.tag }}
+            docker.lightbulb.host/yolks:rust_${{ matrix.tag }}
