@@ -2,7 +2,7 @@ name: build nodejs
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: "0 3 14,28 * *"
   push:
     branches:
       - master
@@ -16,11 +16,9 @@ jobs:
       fail-fast: false
       matrix:
         tag:
-          - 12
-          - 14
           - 16
-          - 17
           - 18
+          - 19
     steps:
       - uses: actions/checkout@v2
       # Setup QEMU for ARM64 Build

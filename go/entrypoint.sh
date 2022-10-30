@@ -35,7 +35,6 @@ export INTERNAL_IP
 cd /home/container || exit 1
 
 # Print Go version
-printf "\033[1m\033[33mcontainer@pterodactyl~ \033[0mgo version\n"
 go version
 
 # Replace Startup Variables

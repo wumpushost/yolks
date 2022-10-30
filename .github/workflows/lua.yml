@@ -2,7 +2,7 @@ name: build lua
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: "0 3 14,28 * *"
   push:
     branches:
       - master

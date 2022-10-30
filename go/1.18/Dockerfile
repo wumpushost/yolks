@@ -6,8 +6,8 @@ LABEL       org.opencontainers.image.source="https://github.com/j122j/yolks"
 LABEL       org.opencontainers.image.licenses=MIT
 
 RUN         apt update \
-            && apt -y install build-essential unzip curl wget git \
-            && useradd -m -d /home/container container
+	&& apt -y install build-essential unzip curl wget git \
+	&& useradd -m -d /home/container container
 
 ENV 		GOPATH /home/container/.go
 ENV 		PATH $GOPATH/bin:$PATH

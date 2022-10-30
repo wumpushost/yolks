@@ -2,7 +2,7 @@ name: build go
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: "0 3 14,28 * *"
   push:
     branches:
       - master
@@ -16,8 +16,8 @@ jobs:
       fail-fast: false
       matrix:
         tag:
-          - 1.16
           - 1.18
+          - 1.19
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-qemu-action@v1
