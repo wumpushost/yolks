@@ -39,6 +39,6 @@ RUN         dpkg --configure -a \
 	&& apt upgrade -y \
 	&& apt -y --no-install-recommends install ca-certificates curl libsdl2-2.0-0 git unzip zip tar jq gcc g++ dnsutils iproute2 ffmpeg procps pkg-config sqlite3 libsqlite3-dev python3 python3-dev python3-pip tzdata build-essential libtool libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev autoconf automake
 
-RUN         curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
+RUN         curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
 	&& apt-get install -y nodejs \
 	&& npm -g install npm@latest
