@@ -29,7 +29,7 @@ jobs:
           buildkitd-flags: --debug
       - uses: docker/login-action@v1
         with:
-          registry: docker.lightbulb.host
+          registry: docker.hextro.host
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
       - uses: docker/build-push-action@v2
@@ -39,4 +39,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            docker.lightbulb.host/yolks:python_${{ matrix.tag }}
+            docker.hextro.host/yolks:python_${{ matrix.tag }}

@@ -1,4 +1,4 @@
-FROM        docker.lightbulb.host/yolks:debian
+FROM        docker.hextro.host/yolks:debian
 
 LABEL       author="Torsten Widmann" maintainer="support@goover.de"
 

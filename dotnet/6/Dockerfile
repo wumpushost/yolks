@@ -1,4 +1,4 @@
-FROM        --platform=$BUILDPLATFORM docker.lightbulb.host/yolks:debian
+FROM        --platform=$BUILDPLATFORM docker.hextro.host/yolks:debian
 
 LABEL       author="Torsten Widmann" maintainer="info@goover.de"
 
