@@ -10,16 +10,16 @@ RUN apt update \
 	&& useradd -m -d /home/container container
 
 RUN cd /opt \
-	&& curl -R -O http://www.lua.org/ftp/lua-5.4.4.tar.gz \
-	&& tar zxf lua-5.4.4.tar.gz \
-	&& cd lua-5.4.4 \
+	&& curl -R -O https://lua.org/ftp/lua-5.4.6.tar.gz \
+	&& tar zxf lua-5.4.6.tar.gz \
+	&& cd lua-5.4.6 \
 	&& make linux test \
 	&& make install
 
 RUN cd /opt \
-	&& wget https://luarocks.github.io/luarocks/releases/luarocks-3.9.1.tar.gz \
-	&& tar zxpf luarocks-3.9.1.tar.gz \
-	&& cd luarocks-3.9.1 \
+	&& wget https://luarocks.github.io/luarocks/releases/luarocks-3.9.2.tar.gz \
+	&& tar zxpf luarocks-3.9.2.tar.gz \
+	&& cd luarocks-3.9.2 \
 	&& ./configure --with-lua-include=/usr/local/include \
 	&& make \
 	&& make install
