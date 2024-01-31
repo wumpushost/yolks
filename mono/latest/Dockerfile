@@ -1,4 +1,4 @@
-FROM docker.hextro.host/yolks:debian
+FROM ghcr.io/wumpushost/yolks:debian
 
 LABEL author="Torsten Widmann" maintainer="support@goover.de"
 
