@@ -1,8 +1,8 @@
 FROM --platform=$TARGETOS/$TARGETARCH debian:stable-slim
 
-LABEL author="Jovan Jovanovic" maintainer="jovan@jovanovic.live"
+LABEL author="Jovan Jovanovic" maintainer="jovan@jvvan.rs"
 
-LABEL org.opencontainers.image.source="https://github.com/j122j/yolks"
+LABEL org.opencontainers.image.source="https://github.com/wumpushost/yolks"
 LABEL org.opencontainers.image.licenses=MIT
 
 RUN apt update \
