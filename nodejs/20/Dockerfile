@@ -3,9 +3,13 @@ FROM --platform=$TARGETOS/$TARGETARCH node:20-bullseye-slim
 LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 RUN apt update \
-	&& apt -y install pkg-config ffmpeg iproute2 git sqlite3 libsqlite3-dev python3 python3-dev ca-certificates dnsutils tzdata zip tar curl build-essential libtool libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev python-is-python3 \
+	&& apt -y install pkg-config ffmpeg iproute2 git sqlite3 libsqlite3-dev python3 python3-dev ca-certificates dnsutils tzdata zip tar curl build-essential libtool libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev libpixman-1-dev python-is-python3 \
 	&& npm -g install npm@latest \
 	&& useradd -m -d /home/container container
+
+# Set environment variables to help with native module builds
+ENV CXXFLAGS=-std=c++14
+ENV npm_config_build_from_source=true
 
 USER container
 ENV USER=container HOME=/home/container
