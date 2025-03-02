@@ -8,8 +8,7 @@ RUN apt update \
 	&& useradd -m -d /home/container container
 
 # Set environment variables to help with native module builds
-ENV CXXFLAGS=-std=c++14
-ENV npm_config_build_from_source=true
+ENV CXXFLAGS=--std=c++17
 
 USER container
 ENV USER=container HOME=/home/container
