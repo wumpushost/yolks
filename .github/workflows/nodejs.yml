@@ -15,13 +15,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag:
-          - 16
-          - 18
-          - 19
+        tag: # Other versions are EOL, will never recieve updates.
+          # - 16
+          # - 18
+          # - 19
           - 20
-          - 21
           - 20-withextra
+          # - 21
+          - 22
+          - 24
     steps:
       - uses: actions/checkout@v4
       # Setup QEMU for ARM64 Build

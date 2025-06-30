@@ -1,4 +1,4 @@
-FROM --platform=$TARGETOS/$TARGETARCH ubuntu:18.04
+FROM --platform=$TARGETOS/$TARGETARCH ubuntu:24.04
 
 LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
 
