@@ -25,6 +25,13 @@ jobs:
           - 22
           - 24
           - 26
+
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write 
+
     steps:
       - uses: actions/checkout@v4
       # Setup QEMU for ARM64 Build
@@ -35,8 +42,8 @@ jobs:
       - uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ github.token }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - uses: docker/build-push-action@v5
         with:
           context: ./nodejs

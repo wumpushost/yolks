@@ -22,6 +22,13 @@ jobs:
           - "3.12"
           - "3.13"
           - "3.14"
+
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write 
+ 
     steps:
       - uses: actions/checkout@v4
       # Setup QEMU for ARM64 Build
