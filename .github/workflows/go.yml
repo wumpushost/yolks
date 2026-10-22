@@ -16,8 +16,9 @@ jobs:
       fail-fast: false
       matrix:
         tag:
-          - 1.23
-          - 1.24
+          # - 1.23
+          # - 1.24
+          - 1.27
     steps:
       - uses: actions/checkout@v4
       - uses: docker/setup-qemu-action@v3

@@ -20,11 +20,12 @@ jobs:
           #          - 8j9
           - 11
           #          - 11j9
-          - 16
+          # - 16
           #          - 16j9
           - 17
           - 21
           - 25
+          - 27
     steps:
       - uses: actions/checkout@v4
       - uses: docker/setup-qemu-action@v3
