@@ -8,6 +8,7 @@ on:
       - master
     paths:
       - rust/**
+
 jobs:
   push:
     name: "yolks:rust_${{ matrix.tag }}"
@@ -17,6 +18,13 @@ jobs:
       matrix:
         tag:
           - "latest"
+ 
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write 
+
     steps:
       - uses: actions/checkout@v4
       # Setup QEMU for ARM64 Build
