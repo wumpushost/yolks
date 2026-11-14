@@ -3,7 +3,7 @@ FROM --platform=$TARGETOS/$TARGETARCH eclipse-temurin:8-jre
 LABEL author="Yaj" maintainer="yaj@hss.gg"
 
 
-LABEL org.opencontainers.image.source="https://github.com/pterodactyl/yolks"
+LABEL org.opencontainers.image.source="https://github.com/wumpushost/yolks"
 LABEL org.opencontainers.image.licenses=MIT
 
 RUN apt update -y \

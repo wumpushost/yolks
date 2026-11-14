@@ -25,7 +25,8 @@ jobs:
           - 17
           - 21
           - 25
-          - 28
+          - 27
+          # - 28 # uncomment this whenever it releases, still in early access right now.
 
     permissions:
       contents: read

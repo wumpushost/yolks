@@ -1,8 +1,8 @@
-FROM --platform=$TARGETOS/$TARGETARCH openjdk:28-slim
+FROM --platform=$TARGETOS/$TARGETARCH eclipse-temurin:28-jre
 
 LABEL author="Yaj" maintainer="yaj@hss.gg"
 
-LABEL org.opencontainers.image.source="https://github.com/pterodactyl/yolks"
+LABEL org.opencontainers.image.source="https://github.com/wumpushost/yolks"
 LABEL org.opencontainers.image.licenses=MIT
 
 RUN apt update -y \
