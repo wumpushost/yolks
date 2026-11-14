@@ -1,6 +1,6 @@
-FROM --platform=$TARGETOS/$TARGETARCH openjdk:25-slim
+FROM --platform=$TARGETOS/$TARGETARCH eclipse-temurin:25-jre
 
-LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
+LABEL author="Yaj" maintainer="yaj@hss.gg"
 
 LABEL org.opencontainers.image.source="https://github.com/pterodactyl/yolks"
 LABEL org.opencontainers.image.licenses=MIT
