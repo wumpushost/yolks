@@ -24,6 +24,7 @@ jobs:
           # - 21
           - 22
           - 24
+          - 24-withping
           - 26
 
     permissions:
